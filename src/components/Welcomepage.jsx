@@ -2,7 +2,7 @@ import { Avatar, Box, Button, Grid, Modal, Typography } from "@mui/material";
 import React from "react";
 import Login from "./Login";
 import SignUp from "./SignUp";
-
+import logo from "/src/images/logo.png";
 const Welcomepage = () => {
   const [open1, setOpen1] = React.useState(false);
   const handleOpen1 = () => setOpen1(true);
@@ -11,11 +11,7 @@ const Welcomepage = () => {
   const [open2, setOpen2] = React.useState(false);
   const handleOpen2 = () => setOpen2(true);
   const handleClose2 = () => setOpen2(false);
-  const section = {
-    backgroundImage: `url('/src/images/bg.png')`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-  };
+
   const grid1 = {
     height: "100vh",
     padding: "0 20px",
@@ -52,9 +48,9 @@ const Welcomepage = () => {
 
   return (
     <>
-      <section style={section}>
+      <section className="welcomesection">
         <Avatar
-          src="/src/images/logo.png"
+          src={logo}
           sx={{ padding: "10px 20px", cursor: "pointer" }}
         ></Avatar>
 

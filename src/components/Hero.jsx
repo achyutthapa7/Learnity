@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import React from "react";
 import Posts from "./Posts";
 import Messages from "./Messages";
-
+import math from "/src/images/math.jpg";
 const Hero = () => {
   const sectionStyle = {
     display: "flex",
@@ -32,26 +32,14 @@ const Hero = () => {
             padding: "40px 20px",
           }}
         >
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
-          <Posts />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
+          <Posts postimage={math} />
         </Box>
         <Box
           className="scroll"

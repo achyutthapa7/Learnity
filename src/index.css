@@ -112,3 +112,8 @@ input::placeholder {
 .scroll::-webkit-scrollbar {
   display: none;
 }
+.welcomesection {
+  background-image: url("/src/images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -3,7 +3,7 @@ import React from "react";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
-const Posts = () => {
+const Posts = (props) => {
   return (
     <>
       <Box
@@ -49,9 +49,9 @@ const Posts = () => {
             background: "black",
           }}
         >
-          <a href="/src/images/math.jpg" target="_black">
+          <a href={props.postimage} target="_black">
             <img
-              src="/src/images/math.jpg"
+              src={props.postimage}
               alt="math"
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
