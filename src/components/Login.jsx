@@ -1,13 +1,18 @@
-import { Typography } from "@mui/material";
-import React from "react";
+import { Button, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+
 const Login = () => {
   const navigate = useNavigate();
+
   const inputdiv = {
     display: "flex",
     flexDirection: "column",
     gap: "30px",
   };
+
   const input = {
     width: "100%",
     background: "white",
@@ -16,6 +21,7 @@ const Login = () => {
     height: "40px",
     borderRadius: "5px",
     padding: "0 10px",
+    position: "relative",
   };
 
   const handleSubmit = (e) => {
@@ -23,18 +29,33 @@ const Login = () => {
     const Password = document.querySelector(".password");
     e.preventDefault();
     checkInput();
-    Email.value = "";
-    Password.value = "";
+    if (Email.value != "" && Password.value != "") {
+      Email.value = "";
+      Password.value = "";
+    }
   };
+
   const checkInput = () => {
     const Email = document.querySelector(".email");
     const Password = document.querySelector(".password");
-    if (Email.value != "" && Password.value != "") {
+    if (
+      Email.value === "achyut13thapa@gmail.com" &&
+      Password.value === "qwertyuiop@1234567890"
+    ) {
       navigate("/interest");
-    } else if (Email.value == "" || Password.value == "") {
-      alert("cannot leave space");
+    } else if (Email.value === "" || Password.value === "") {
+      alert("Cannot leave space");
+    } else {
+      alert("Email and password don't match");
     }
   };
+
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <>
       <Typography variant="h2" textAlign="center">
@@ -49,12 +70,39 @@ const Login = () => {
             style={input}
             className="email"
           />
-          <input
-            type="password"
-            placeholder="Enter Your Password"
-            style={input}
-            className="password"
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              type={passwordVisible ? "text" : "password"}
+              placeholder="Enter Your Password"
+              style={input}
+              className="password"
+            />
+            {passwordVisible ? (
+              <VisibilityIcon
+                sx={{
+                  cursor: "pointer",
+                  position: "absolute",
+                  top: "50%",
+                  right: "10px",
+                  transform: "translateY(-50%)",
+                  color: "#a76767",
+                }}
+                onClick={togglePasswordVisibility}
+              />
+            ) : (
+              <VisibilityOffIcon
+                sx={{
+                  cursor: "pointer",
+                  position: "absolute",
+                  top: "50%",
+                  right: "10px",
+                  transform: "translateY(-50%)",
+                  color: "#a76767",
+                }}
+                onClick={togglePasswordVisibility}
+              />
+            )}
+          </div>
         </div>
         <br />
 
