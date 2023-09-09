@@ -12,6 +12,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import LearnandBrowse from "./LearnandBrowse";
 import SearchIcon from "@mui/icons-material/Search";
+import logo from "/src/images/logo.png";
 const Header = () => {
   const [style, setStyle] = useState("none");
   const [shown, setShown] = useState("flex");
@@ -35,10 +36,7 @@ const Header = () => {
               display: { xs: shown, md: "flex" },
             }}
           >
-            <Avatar
-              src="/src/images/logo.png"
-              sx={{ cursor: "pointer" }}
-            ></Avatar>
+            <Avatar src={logo} sx={{ cursor: "pointer" }}></Avatar>
             <LearnandBrowse />
           </Box>
           <Tooltip title="search">

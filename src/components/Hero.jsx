@@ -29,7 +29,7 @@ const Hero = () => {
             height: "auto",
             width: "50%",
             flex: 1,
-            padding: "40px 20px",
+            padding: "40px 0",
           }}
         >
           <Posts postimage={math} />
