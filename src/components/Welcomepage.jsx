@@ -3,6 +3,7 @@ import React from "react";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import logo from "/src/images/logo.png";
+import edbg from "/src/images/edbg.jpg";
 const Welcomepage = () => {
   const [open1, setOpen1] = React.useState(false);
   const handleOpen1 = () => setOpen1(true);
@@ -63,7 +64,7 @@ const Welcomepage = () => {
             sx={{
               backgroundImage: {
                 md: "none",
-                xs: `url("/src/images/edbg.jpg")`,
+                xs: `url(${edbg})`,
               },
               backgroundSize: "cover",
 
